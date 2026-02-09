@@ -1,72 +1,37 @@
-import { Search, MessageSquare, ShieldCheck } from "lucide-react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { ShieldCheck, Cpu, Monitor } from "lucide-react";
 
 const services = [
-  {
-    icon: Search,
-    title: "Penetration Testing",
-    points: [
-      "Conducting deep reconnaissance to uncover hidden vulnerabilities within IT infrastructures.",
-      "Executing simulated attacks that mimic real-world adversaries, exposing system weaknesses.",
-    ],
-  },
-  {
-    icon: MessageSquare,
-    title: "Security Consulting",
-    points: [
-      "Crafting tactical recommendations to bolster cybersecurity defenses.",
-      "Assisting in the deployment of fortified security strategies and solutions.",
-    ],
-  },
-  {
-    icon: ShieldCheck,
-    title: "Defense Mechanisms",
-    points: [
-      "Maintaining a vigilant watch against malicious incursions with continuous monitoring and rapid countermeasures.",
-      "Deploying advanced defense technologies to detect and repel cyber threats with surgical accuracy.",
-    ],
-  },
+  { title: "Managed Security", desc: "24/7 monitoring and response", icon: ShieldCheck },
+  { title: "Vulnerability Assessment", desc: "Regular scans and remediation", icon: Cpu },
+  { title: "Security Consulting", desc: "Strategy, architecture & training", icon: Monitor },
 ];
 
-const ServicesSection = () => (
-  <section id="services" className="relative py-20 bg-gradient-to-br from-secondary via-secondary/90 to-accent/10 overflow-hidden">
-    {/* Subtle cyber grid overlay */}
-    <div className="absolute inset-0 opacity-[0.04] pointer-events-none" style={{ backgroundImage: 'linear-gradient(hsl(var(--accent)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--accent)) 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 className="text-3xl md:text-4xl font-bold text-center text-secondary-foreground mb-4">Our Services</h2>
-      <p className="text-center text-secondary-foreground/70 max-w-2xl mx-auto mb-12">
-        Comprehensive cybersecurity solutions tailored to your needs.
-      </p>
-      <div className="grid md:grid-cols-3 gap-8">
-        {services.map((s) => (
-          <Card key={s.title} className="border-none shadow-lg hover:shadow-xl transition-shadow bg-card flex flex-col">
-            <CardHeader>
-              <div className="w-14 h-14 rounded-full bg-accent/10 flex items-center justify-center mb-3">
-                <s.icon className="w-7 h-7 text-accent" />
-              </div>
-              <CardTitle className="text-xl">{s.title}</CardTitle>
-            </CardHeader>
-            <CardContent className="flex-1 flex flex-col">
-              <ul className="space-y-3 text-muted-foreground text-sm leading-relaxed flex-1">
-                {s.points.map((p, i) => (
-                  <li key={i} className="flex gap-2">
-                    <span className="text-accent mt-1">•</span>
-                    <span>{p}</span>
-                  </li>
-                ))}
-              </ul>
-              <a
-                href="#contact"
-                className="mt-6 text-accent hover:text-accent/80 font-medium text-sm transition-colors inline-block"
-              >
-                Learn More →
-              </a>
-            </CardContent>
-          </Card>
-        ))}
-      </div>
-    </div>
-  </section>
-);
+export default function Services() {
+  return (
+    <section
+      aria-label="Services"
+      className="py-16 bg-gradient-to-b from-[hsl(var(--secondary)/0.14)] to-[hsl(var(--secondary)/0.02)]"
+    >
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 className="text-3xl font-semibold mb-8 font-[Cinzel] text-secondary-foreground">Our Services</h2>
 
-export default ServicesSection;
+        <div className="grid md:grid-cols-3 gap-6">
+          {services.map((s) => {
+            const Icon = s.icon;
+            return (
+              <article key={s.title} className="p-6 rounded-lg shadow-sm bg-secondary text-secondary-foreground">
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="p-2 rounded-md bg-secondary-foreground/10">
+                    <Icon className="w-6 h-6 text-accent" />
+                  </div>
+                  <h3 className="text-lg font-medium">{s.title}</h3>
+                </div>
+                <p className="text-sm text-secondary-foreground/80">{s.desc}</p>
+              </article>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}
