@@ -29,10 +29,12 @@ const services = [
 ];
 
 const ServicesSection = () => (
-  <section id="services" className="py-20 bg-background">
+  <section id="services" className="relative py-20 bg-gradient-to-br from-secondary via-secondary/90 to-accent/10 overflow-hidden">
+    {/* Subtle cyber grid overlay */}
+    <div className="absolute inset-0 opacity-[0.04] pointer-events-none" style={{ backgroundImage: 'linear-gradient(hsl(var(--accent)) 1px, transparent 1px), linear-gradient(90deg, hsl(var(--accent)) 1px, transparent 1px)', backgroundSize: '40px 40px' }} />
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 className="text-3xl md:text-4xl font-bold text-center text-foreground mb-4">Our Services</h2>
-      <p className="text-center text-muted-foreground max-w-2xl mx-auto mb-12">
+      <h2 className="text-3xl md:text-4xl font-bold text-center text-secondary-foreground mb-4">Our Services</h2>
+      <p className="text-center text-secondary-foreground/70 max-w-2xl mx-auto mb-12">
         Comprehensive cybersecurity solutions tailored to your needs.
       </p>
       <div className="grid md:grid-cols-3 gap-8">

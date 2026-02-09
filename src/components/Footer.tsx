@@ -42,17 +42,23 @@ const Footer = () => (
         <div>
           <h3 className="text-lg font-semibold mb-4 font-[Cinzel]">Contact Info</h3>
           <ul className="space-y-3 text-sm">
-            <li className="flex items-center gap-2 text-secondary-foreground/70">
-              <Phone className="w-4 h-4 text-accent" />
-              0742908934
+            <li>
+              <a href="tel:0742908934" className="flex items-center gap-2 text-secondary-foreground/70 hover:text-accent transition-colors">
+                <Phone className="w-4 h-4 text-accent" />
+                0742908934
+              </a>
             </li>
-            <li className="flex items-center gap-2 text-secondary-foreground/70">
-              <Mail className="w-4 h-4 text-accent" />
-              vincentmurimi74@gmail.com
+            <li>
+              <a href="mailto:vincentmurimi74@gmail.com" className="flex items-center gap-2 text-secondary-foreground/70 hover:text-accent transition-colors">
+                <Mail className="w-4 h-4 text-accent" />
+                vincentmurimi74@gmail.com
+              </a>
             </li>
-            <li className="flex items-start gap-2 text-secondary-foreground/70">
-              <MapPin className="w-4 h-4 text-accent mt-0.5" />
-              Kigali – Brooklyn – London - Hamburg
+            <li>
+              <a href="https://www.google.com/maps/search/Kigali+Brooklyn+London+Hamburg" target="_blank" rel="noopener noreferrer" className="flex items-start gap-2 text-secondary-foreground/70 hover:text-accent transition-colors">
+                <MapPin className="w-4 h-4 text-accent mt-0.5" />
+                Kigali – Brooklyn – London - Hamburg
+              </a>
             </li>
           </ul>
         </div>

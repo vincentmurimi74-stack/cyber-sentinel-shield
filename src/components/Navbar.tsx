@@ -30,7 +30,7 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-20">
           <a href="#home" className="flex items-center gap-3">
             <img src={logo} alt="W&S Logo" className="h-12 w-12 object-contain" />
-            <img src={textLogo} alt="Willburn & Stephenson" className="h-8 hidden sm:block object-contain" />
+            <img src={textLogo} alt="Willburn & Stephenson" className="h-8 object-contain" />
           </a>
 
           {/* Desktop links */}
