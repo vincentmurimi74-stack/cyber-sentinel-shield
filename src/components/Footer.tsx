@@ -49,9 +49,9 @@ const Footer = () => (
               </a>
             </li>
             <li>
-              <a href="mailto:vincent@gmail.com"target="_blank" className="flex items-center gap-2 text-secondary-foreground/70 hover:text-accent transition-colors">
+              <a href="mailto:vmurimi55@gmail.com"target="_blank" className="flex items-center gap-2 text-secondary-foreground/70 hover:text-accent transition-colors">
                 <Mail className="w-4 h-4 text-accent" />
-                vincentmurimi74@gmail.com
+                vincentmurimi55@gmail.com
               </a>
             </li>
             <li>
