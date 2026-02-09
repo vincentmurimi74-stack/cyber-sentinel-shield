@@ -18,9 +18,9 @@ const cards = [
     icon: Shield,
     title: "Our Values",
     items: [
-      "Discretion: Every mission is conducted with the utmost confidentiality and precision.",
-      "Excellence: Our commitment to unparalleled quality ensures our clients' defenses remain unbreachable.",
-      "Effectiveness: We deliver targeted solutions that are both efficient and devastatingly effective against cyber adversaries.",
+      "Discretion:",
+      "Excellence: ",
+      "Effectiveness: ",
     ],
   },
 ];
