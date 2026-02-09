@@ -43,13 +43,13 @@ const Footer = () => (
           <h3 className="text-lg font-semibold mb-4 font-[Cinzel]">Contact Info</h3>
           <ul className="space-y-3 text-sm">
             <li>
-              <a href="tel:0742908934" className="flex items-center gap-2 text-secondary-foreground/70 hover:text-accent transition-colors">
+              <a href="tel:0742908934"target="_blank" className="flex items-center gap-2 text-secondary-foreground/70 hover:text-accent transition-colors">
                 <Phone className="w-4 h-4 text-accent" />
                 0742908934
               </a>
             </li>
             <li>
-              <a href="mailto:vincentmurimi74@gmail.com" className="flex items-center gap-2 text-secondary-foreground/70 hover:text-accent transition-colors">
+              <a href="mailto:vincentmurimi74@gmail.com"target="_blank" className="flex items-center gap-2 text-secondary-foreground/70 hover:text-accent transition-colors">
                 <Mail className="w-4 h-4 text-accent" />
                 vincentmurimi74@gmail.com
               </a>
