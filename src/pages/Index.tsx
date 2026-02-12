@@ -6,7 +6,7 @@ import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 
 const Index = () => (
-  <main>
+  <main className="theme-dark bg-background text-foreground min-h-screen">
     <Navbar />
     <HeroCarousel />
     <AboutSection />

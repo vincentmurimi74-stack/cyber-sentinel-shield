@@ -29,8 +29,16 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-20">
           <a href="#home" className="flex items-center gap-3">
-            <img src={logo} alt="W&S Logo" className="h-12 w-12 object-contain" />
-            <img src={textLogo} alt="Willburn & Stephenson" className="h-8 object-contain" />
+            <img
+              src={logo}
+              alt="W&S Logo"
+              className="h-12 w-12 object-contain"
+            />
+            <img
+              src={textLogo}
+              alt="Willburn & Stephenson"
+              className="h-8 object-contain"
+            />
           </a>
 
           {/* Desktop links */}
@@ -39,7 +47,7 @@ const Navbar = () => {
               <a
                 key={l.label}
                 href={l.href}
-                className="text-primary-foreground/80 hover:text-accent font-medium transition-colors text-sm tracking-wider uppercase"
+                className="text-foreground/80 hover:text-primary font-medium transition-colors text-sm tracking-wider uppercase"
               >
                 {l.label}
               </a>
@@ -54,15 +62,30 @@ const Navbar = () => {
 
           {/* Mobile toggle */}
           <button
-            className="md:hidden text-primary-foreground"
+            className="md:hidden text-foreground"
             onClick={() => setMobileOpen(!mobileOpen)}
             aria-label="Toggle menu"
           >
-            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <svg
+              className="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
               {mobileOpen ? (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M6 18L18 6M6 6l12 12"
+                />
               ) : (
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="M4 6h16M4 12h16M4 18h16"
+                />
               )}
             </svg>
           </button>
@@ -70,13 +93,13 @@ const Navbar = () => {
 
         {/* Mobile menu */}
         {mobileOpen && (
-          <div className="md:hidden bg-secondary/95 backdrop-blur-md pb-4 space-y-2">
+          <div className="md:hidden bg-secondary/95 backdrop-blur-md pb-4 space-y-2 rounded-lg">
             {links.map((l) => (
               <a
                 key={l.label}
                 href={l.href}
                 onClick={() => setMobileOpen(false)}
-                className="block px-4 py-2 text-primary-foreground/80 hover:text-accent text-sm tracking-wider uppercase"
+                className="block px-4 py-2 text-foreground/80 hover:text-primary text-sm tracking-wider uppercase"
               >
                 {l.label}
               </a>
@@ -84,7 +107,7 @@ const Navbar = () => {
             <a
               href="#contact"
               onClick={() => setMobileOpen(false)}
-              className="block mx-4 text-center bg-accent text-accent-foreground px-6 py-2.5 rounded font-semibold text-sm tracking-wider uppercase"
+              className="block mx-4 text-center bg-accent text-accent-foreground px-6 py-2.5 rounded-lg font-semibold text-sm tracking-wider uppercase"
             >
               Contact Us
             </a>
