@@ -16,9 +16,9 @@ const cards = [
     icon: Shield,
     title: "Our Values",
     items: [
-      { label: "Discretion", desc: "Every mission is conducted with the utmost confidentiality and precision." },
-      { label: "Excellence", desc: "Our commitment to unparalleled quality ensures our clients' defenses remain unbreachable." },
-      { label: "Effectiveness", desc: "We deliver targeted solutions that are both efficient and devastatingly effective against cyber adversaries." },
+      "Discretion:",
+      "Excellence: ",
+      "Effectiveness: ",
     ],
   },
 ];
@@ -26,14 +26,37 @@ const cards = [
 const AboutSection = () => (
   <section
     id="about"
-    className="relative py-20 overflow-hidden"
-    style={{ backgroundColor: "hsl(43 70% 42%)" }}
+    className="relative py-20"
+    style={{
+      // Light gold – warm, luxurious, but still very readable
+      background: "linear-gradient(135deg, #fdfaf3 0%, #fcf8f0 50%, #f9f5e9 100%)",
+    }}
   >
+    {/* Subtle light gold pattern overlay – very faint geometric feel */}
+    <div
+      className="absolute inset-0 pointer-events-none opacity-[0.07]"
+      style={{
+        backgroundImage: `
+          radial-gradient(circle at 25% 25%, rgba(189, 158, 90, 0.06) 1px, transparent 1px),
+          radial-gradient(circle at 75% 75%, rgba(189, 158, 90, 0.06) 1px, transparent 1px)
+        `,
+        backgroundSize: "60px 60px",
+      }}
+    />
+
+    {/* Optional extra subtle noise/grain for premium texture feel */}
+    <div
+      className="absolute inset-0 pointer-events-none opacity-[0.03]"
+      style={{
+        backgroundImage: "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.08'/%3E%3C/svg%3E\")",
+      }}
+    />
+
     <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 className="text-4xl md:text-5xl font-bold text-center mb-6" style={{ color: "hsl(224 35% 10%)" }}>
+      <h2 className="text-4xl md:text-5xl font-bold text-center text-slate-800 mb-6">
         About Us
       </h2>
-      <p className="text-center max-w-3xl mx-auto mb-16 text-lg leading-relaxed" style={{ color: "hsl(224 35% 15%)" }}>
+      <p className="text-center text-slate-700 max-w-3xl mx-auto mb-16 text-lg leading-relaxed">
         Specializing in sophisticated penetration testing, strategic defense recommendations, and comprehensive protective measures.
       </p>
 
@@ -41,30 +64,24 @@ const AboutSection = () => (
         {cards.map((c) => (
           <Card
             key={c.title}
-            className="border-none shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col"
-            style={{ backgroundColor: "hsl(224 35% 12%)" }}
+            className="border border-slate-200/80 shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col bg-white/95 backdrop-blur-[2px]"
           >
             <CardHeader className="items-center text-center pb-2">
-              <div
-                className="w-16 h-16 rounded-xl flex items-center justify-center mb-4"
-                style={{ backgroundColor: "hsl(43 85% 58% / 0.15)" }}
-              >
-                <c.icon className="w-8 h-8" style={{ color: "hsl(205 39% 46%)" }} />
+              <div className="w-16 h-16 rounded-xl bg-amber-50 flex items-center justify-center mb-4 border border-amber-100">
+                <c.icon className="w-8 h-8 text-amber-700" />
               </div>
-              <CardTitle className="text-2xl text-white">{c.title}</CardTitle>
+              <CardTitle className="text-2xl text-slate-800">{c.title}</CardTitle>
             </CardHeader>
 
-            <CardContent className="text-base leading-relaxed flex-1 flex flex-col px-6 pb-8 text-white/80">
-              {c.text && <p>{c.text}</p>}
+            <CardContent className="text-slate-700 text-base leading-relaxed flex-1 flex flex-col px-6 pb-8">
+              {c.text && <p className="mb-6">{c.text}</p>}
 
               {c.items && (
                 <ul className="space-y-4 flex-1">
                   {c.items.map((item, i) => (
-                    <li key={i}>
-                      <span className="font-semibold" style={{ color: "hsl(43 85% 58%)" }}>
-                        {item.label}:
-                      </span>{" "}
-                      {item.desc}
+                    <li key={i} className="flex items-start gap-3">
+                      <div className="mt-1.5 flex-shrink-0 w-2.5 h-2.5 rounded-full bg-amber-600" />
+                      <span>{item}</span>
                     </li>
                   ))}
                 </ul>
