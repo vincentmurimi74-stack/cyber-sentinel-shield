@@ -49,7 +49,7 @@ const AboutSection = () => (
                 className="w-16 h-16 rounded-xl flex items-center justify-center mb-4"
                 style={{ backgroundColor: "hsl(43 85% 58% / 0.15)" }}
               >
-                <c.icon className="w-8 h-8" style={{ color: "hsl(43 85% 58%)" }} />
+                <c.icon className="w-8 h-8" style={{ color: "hsl(205 39% 46%)" }} />
               </div>
               <CardTitle className="text-2xl text-white">{c.title}</CardTitle>
             </CardHeader>
