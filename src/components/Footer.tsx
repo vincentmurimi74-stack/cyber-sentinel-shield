@@ -119,7 +119,7 @@ const Footer = () => (
                 className="flex items-center gap-2 text-white hover:text-accent transition-colors"
               >
                 <Mail className="w-4 h-4 text-accent" />
-                vincentmurimi55@gmail.com
+                vmurimi55@gmail.com
               </a>
             </li>
             <li>
