@@ -36,7 +36,7 @@ const ServicesSection = () => (
       <div className="absolute -bottom-28 left-[-15%] h-[26rem] w-[26rem] rounded-full bg-primary/15 blur-3xl" />
     </div>
 
-    {/* Subtle cyber grid overlay (kept but toned down) */}
+    {/* Subtle cyber grid overlay */}
     <div
       className="absolute inset-0 opacity-[0.03] pointer-events-none"
       style={{
@@ -69,14 +69,13 @@ const ServicesSection = () => (
               </CardTitle>
             </CardHeader>
             <CardContent className="flex-1 flex flex-col">
-              <ul className="space-y-3 text-muted-foreground text-sm leading-relaxed flex-1">
+              <div className="space-y-4 text-muted-foreground text-sm leading-relaxed flex-1">
                 {s.points.map((p, i) => (
-                  <li key={i} className="flex gap-2">
-                    <span className="text-accent mt-1">•</span>
-                    <span>{p}</span>
-                  </li>
+                  <div key={i}>
+                    {p}
+                  </div>
                 ))}
-              </ul>
+              </div>
               <a
                 href="#contact"
                 className="mt-6 text-accent hover:text-accent/80 font-medium text-sm transition-colors inline-block"
