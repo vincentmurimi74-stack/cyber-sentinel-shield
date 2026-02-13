@@ -1,5 +1,6 @@
 import { Eye, Target, Shield } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import cyber2 from "@/assets/cyber2.jpg";
 
 const cards = [
   {
@@ -16,46 +17,41 @@ const cards = [
     icon: Shield,
     title: "Our Values",
     items: [
-      "Discretion",
-      "Excellence",
-      "Effectiveness",
+      { label: "Discretion", desc: "Every mission is conducted with the utmost confidentiality and precision." },
+      { label: "Excellence", desc: "Our commitment to unparalleled quality ensures our clients' defenses remain unbreachable." },
+      { label: "Effectiveness", desc: "We deliver targeted solutions that are both efficient and devastatingly effective against cyber adversaries." },
     ],
   },
 ];
 
 const AboutSection = () => (
-  <section
-    id="about"
-    className="relative py-20"
-    style={{
-      background: "linear-gradient(135deg, #fdfaf3 0%, #fcf8f0 50%, #f9f5e9 100%)",
-    }}
-  >
-    {/* Subtle light gold pattern overlay */}
-    <div
-      className="absolute inset-0 pointer-events-none opacity-[0.07]"
-      style={{
-        backgroundImage: `
-          radial-gradient(circle at 25% 25%, rgba(189, 158, 90, 0.06) 1px, transparent 1px),
-          radial-gradient(circle at 75% 75%, rgba(189, 158, 90, 0.06) 1px, transparent 1px)
-        `,
-        backgroundSize: "60px 60px",
-      }}
-    />
+  <section id="about" className="relative py-20 overflow-hidden">
+    {/* Background image with heavy light overlay for readability */}
+    <div className="absolute inset-0">
+      <img
+        src={cyber2}
+        alt=""
+        className="w-full h-full object-cover"
+        aria-hidden="true"
+      />
+      <div className="absolute inset-0 bg-gradient-to-br from-white/92 via-white/90 to-blue-50/92" />
+    </div>
 
-    {/* Subtle noise/grain overlay */}
+    {/* Subtle circuit-board grid pattern */}
     <div
-      className="absolute inset-0 pointer-events-none opacity-[0.03]"
+      className="absolute inset-0 pointer-events-none opacity-[0.06]"
       style={{
-        backgroundImage: "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.08'/%3E%3C/svg%3E\")",
+        backgroundImage:
+          "linear-gradient(hsl(205 39% 46%) 1px, transparent 1px), linear-gradient(90deg, hsl(205 39% 46%) 1px, transparent 1px)",
+        backgroundSize: "50px 50px",
       }}
     />
 
     <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 className="text-4xl md:text-5xl font-bold text-center text-slate-800 mb-6">
+      <h2 className="text-4xl md:text-5xl font-bold text-center mb-6" style={{ color: "hsl(224 35% 14%)" }}>
         About Us
       </h2>
-      <p className="text-center text-slate-700 max-w-3xl mx-auto mb-16 text-lg leading-relaxed">
+      <p className="text-center max-w-3xl mx-auto mb-16 text-lg leading-relaxed" style={{ color: "hsl(220 30% 25%)" }}>
         Specializing in sophisticated penetration testing, strategic defense recommendations, and comprehensive protective measures.
       </p>
 
@@ -63,26 +59,37 @@ const AboutSection = () => (
         {cards.map((c) => (
           <Card
             key={c.title}
-            className="border border-slate-200/80 shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col bg-white/95 backdrop-blur-[2px]"
+            className="border border-border/60 shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col bg-white/95 backdrop-blur-sm"
           >
             <CardHeader className="items-center text-center pb-2">
-              <div className="w-16 h-16 rounded-xl bg-blue-50 flex items-center justify-center mb-4 border border-blue-100">
-                <c.icon className="w-8 h-8 text-blue-800" />
+              <div
+                className="w-16 h-16 rounded-xl flex items-center justify-center mb-4 border"
+                style={{
+                  backgroundColor: "hsl(205 39% 94%)",
+                  borderColor: "hsl(205 39% 85%)",
+                }}
+              >
+                <c.icon className="w-8 h-8" style={{ color: "hsl(205 39% 36%)" }} />
               </div>
-              <CardTitle className="text-2xl text-slate-800">{c.title}</CardTitle>
+              <CardTitle className="text-2xl" style={{ color: "hsl(224 35% 14%)" }}>
+                {c.title}
+              </CardTitle>
             </CardHeader>
 
-            <CardContent className="text-slate-700 text-base leading-relaxed flex-1 flex flex-col px-6 pb-8">
-              {c.text && <p className="mb-6">{c.text}</p>}
+            <CardContent className="text-base leading-relaxed flex-1 flex flex-col px-6 pb-8" style={{ color: "hsl(220 20% 30%)" }}>
+              {c.text && <p>{c.text}</p>}
 
               {c.items && (
-                <div className="space-y-3 flex-1">
+                <ul className="space-y-4 flex-1">
                   {c.items.map((item, i) => (
-                    <div key={i}>
-                      {item}
-                    </div>
+                    <li key={i}>
+                      <span className="font-semibold" style={{ color: "hsl(43 70% 40%)" }}>
+                        {item.label}:
+                      </span>{" "}
+                      {item.desc}
+                    </li>
                   ))}
-                </div>
+                </ul>
               )}
             </CardContent>
           </Card>
