@@ -16,9 +16,9 @@ const cards = [
     icon: Shield,
     title: "Our Values",
     items: [
-      "Discretion:",
-      "Excellence: ",
-      "Effectiveness: ",
+      "Discretion",
+      "Excellence",
+      "Effectiveness",
     ],
   },
 ];
@@ -28,11 +28,10 @@ const AboutSection = () => (
     id="about"
     className="relative py-20"
     style={{
-      // Light gold – warm, luxurious, but still very readable
       background: "linear-gradient(135deg, #fdfaf3 0%, #fcf8f0 50%, #f9f5e9 100%)",
     }}
   >
-    {/* Subtle light gold pattern overlay – very faint geometric feel */}
+    {/* Subtle light gold pattern overlay */}
     <div
       className="absolute inset-0 pointer-events-none opacity-[0.07]"
       style={{
@@ -44,7 +43,7 @@ const AboutSection = () => (
       }}
     />
 
-    {/* Optional extra subtle noise/grain for premium texture feel */}
+    {/* Subtle noise/grain overlay */}
     <div
       className="absolute inset-0 pointer-events-none opacity-[0.03]"
       style={{
@@ -67,8 +66,8 @@ const AboutSection = () => (
             className="border border-slate-200/80 shadow-lg hover:shadow-xl transition-all duration-300 flex flex-col bg-white/95 backdrop-blur-[2px]"
           >
             <CardHeader className="items-center text-center pb-2">
-              <div className="w-16 h-16 rounded-xl bg-amber-50 flex items-center justify-center mb-4 border border-amber-100">
-                <c.icon className="w-8 h-8 text-amber-700" />
+              <div className="w-16 h-16 rounded-xl bg-blue-50 flex items-center justify-center mb-4 border border-blue-100">
+                <c.icon className="w-8 h-8 text-blue-800" /> {/* Changed to dark blue */}
               </div>
               <CardTitle className="text-2xl text-slate-800">{c.title}</CardTitle>
             </CardHeader>
@@ -77,11 +76,12 @@ const AboutSection = () => (
               {c.text && <p className="mb-6">{c.text}</p>}
 
               {c.items && (
-                <ul className="space-y-4 flex-1">
+                <ul className="space-y-3 flex-1">
                   {c.items.map((item, i) => (
-                    <li key={i} className="flex items-start gap-3">
-                      <div className="mt-1.5 flex-shrink-0 w-2.5 h-2.5 rounded-full bg-amber-600" />
-                      <span>{item}</span>
+                    <li key={i} className="pl-6 relative">
+                      {/* Removed the dot; using pseudo-element for clean indent instead */}
+                      <span className="absolute left-0 top-1.5 text-blue-800 font-bold">•</span>
+                      {item}
                     </li>
                   ))}
                 </ul>
