@@ -27,7 +27,7 @@ const AboutSection = () => (
   <section
     id="about"
     className="relative py-20 overflow-hidden"
-    style={{ backgroundColor: "hsl(43 85% 58%)" }}
+    style={{ backgroundColor: "hsl(43 70% 42%)" }}
   >
     <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <h2 className="text-4xl md:text-5xl font-bold text-center mb-6" style={{ color: "hsl(224 35% 10%)" }}>
