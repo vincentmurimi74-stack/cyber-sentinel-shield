@@ -28,23 +28,32 @@ const AboutSection = () => (
     id="about"
     className="relative py-20 overflow-hidden"
     style={{
-      // Light golden base + very subtle cybersecurity pattern
-      backgroundColor: "#fdfaf3", // soft warm off-white / light golden base
+      // === Modern cybersecurity background ===
+      background: "linear-gradient(135deg, #0d1117 0%, #161b22 50%, #0d1117 100%)",
       backgroundImage: `
-        linear-gradient(rgba(212, 175, 55, 0.035) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(212, 175, 55, 0.035) 1px, transparent 1px),
-        radial-gradient(circle at 20% 30%, rgba(212, 175, 55, 0.025) 0%, transparent 12%),
-        radial-gradient(circle at 80% 70%, rgba(212, 175, 55, 0.025) 0%, transparent 12%)
+        radial-gradient(circle at 10% 20%, rgba(88, 101, 242, 0.08) 0%, transparent 30%),
+        radial-gradient(circle at 90% 80%, rgba(88, 101, 242, 0.06) 0%, transparent 30%),
+        linear-gradient(rgba(88, 101, 242, 0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(88, 101, 242, 0.04) 1px, transparent 1px)
       `,
-      backgroundSize: "70px 70px, 70px 70px, 100% 100%, 100% 100%",
+      backgroundSize: "200% 200%, 200% 200%, 60px 60px, 60px 60px",
       backgroundPosition: "center",
     }}
   >
+    {/* Dark semi-transparent overlay for readability */}
+    <div
+      className="absolute inset-0"
+      style={{
+        background: "rgba(13, 17, 23, 0.65)",
+        backdropFilter: "blur(2px)",
+      }}
+    />
+
     <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-4">
+      <h2 className="text-4xl md:text-5xl font-bold text-center text-white mb-6 tracking-tight drop-shadow-lg">
         About Us
       </h2>
-      <p className="text-center text-gray-700 max-w-3xl mx-auto mb-12 text-lg">
+      <p className="text-center text-gray-300 max-w-3xl mx-auto mb-16 text-lg leading-relaxed">
         Specializing in sophisticated penetration testing, strategic defense recommendations, and comprehensive protective measures.
       </p>
 
@@ -52,21 +61,25 @@ const AboutSection = () => (
         {cards.map((c) => (
           <Card
             key={c.title}
-            className="border border-amber-100/60 shadow-sm hover:shadow-md transition-all duration-300 flex flex-col bg-white/98 backdrop-blur-[1px]"
+            className="border border-gray-700/40 bg-gray-900/85 backdrop-blur-md shadow-xl hover:shadow-2xl hover:shadow-blue-500/20 transition-all duration-300 flex flex-col overflow-hidden"
           >
-            <CardHeader className="items-center text-center">
-              <div className="w-14 h-14 rounded-full bg-amber-50 flex items-center justify-center mb-3">
-                <c.icon className="w-7 h-7 text-amber-700" />
+            <CardHeader className="items-center text-center pb-2">
+              <div className="w-16 h-16 rounded-xl bg-blue-950/50 flex items-center justify-center mb-4 border border-blue-500/30">
+                <c.icon className="w-8 h-8 text-blue-400" />
               </div>
-              <CardTitle className="text-xl text-gray-900">{c.title}</CardTitle>
+              <CardTitle className="text-2xl text-white">{c.title}</CardTitle>
             </CardHeader>
 
-            <CardContent className="text-gray-700 text-sm leading-relaxed flex-1 flex flex-col">
-              {c.text && <p className="mb-4">{c.text}</p>}
+            <CardContent className="text-gray-300 text-base leading-relaxed flex-1 flex flex-col px-6 pb-8">
+              {c.text && <p className="mb-6">{c.text}</p>}
+
               {c.items && (
-                <ul className="space-y-3 list-disc list-inside flex-1">
+                <ul className="space-y-4 flex-1">
                   {c.items.map((item, i) => (
-                    <li key={i}>{item}</li>
+                    <li key={i} className="flex items-start gap-3">
+                      <div className="mt-1.5 flex-shrink-0 w-2 h-2 rounded-full bg-blue-500" />
+                      <span>{item}</span>
+                    </li>
                   ))}
                 </ul>
               )}
