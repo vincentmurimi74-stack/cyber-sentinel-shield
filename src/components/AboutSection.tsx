@@ -67,7 +67,7 @@ const AboutSection = () => (
           >
             <CardHeader className="items-center text-center pb-2">
               <div className="w-16 h-16 rounded-xl bg-blue-50 flex items-center justify-center mb-4 border border-blue-100">
-                <c.icon className="w-8 h-8 text-blue-800" /> {/* Changed to dark blue */}
+                <c.icon className="w-8 h-8 text-blue-800" />
               </div>
               <CardTitle className="text-2xl text-slate-800">{c.title}</CardTitle>
             </CardHeader>
@@ -76,15 +76,13 @@ const AboutSection = () => (
               {c.text && <p className="mb-6">{c.text}</p>}
 
               {c.items && (
-                <ul className="space-y-3 flex-1">
+                <div className="space-y-3 flex-1">
                   {c.items.map((item, i) => (
-                    <li key={i} className="pl-6 relative">
-                      {/* Removed the dot; using pseudo-element for clean indent instead */}
-                      <span className="absolute left-0 top-1.5 text-blue-800 font-bold">•</span>
+                    <div key={i}>
                       {item}
-                    </li>
+                    </div>
                   ))}
-                </ul>
+                </div>
               )}
             </CardContent>
           </Card>
