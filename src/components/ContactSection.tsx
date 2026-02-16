@@ -95,7 +95,7 @@ const ContactSection = () => {
             </div>
             <Button
               type="submit"
-              className="w-full roundec-lg bg-accent text-accent-foreground hover:bg-accent/90 font-semibold tracking-wider uppercase"
+              className="w-full rounded-lg bg-accent text-accent-foreground hover:bg-accent/90 font-semibold tracking-wider capitalize"
             >
               Send Message
             </Button>

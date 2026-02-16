@@ -1,5 +1,5 @@
 import { Phone, Mail, MapPin } from "lucide-react";
-import logo from "@/assets/logo3.png";
+import logo from "@/assets/Final-logo1.png";
 
 const Footer = () => (
   <footer className="relative isolate theme-dark bg-gradient-to-b from-secondary/70 via-secondary/60 to-background/10 py-12 overflow-hidden">

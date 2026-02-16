@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import logo from "@/assets/logo3.png";
-import textLogo from "@/assets/text1.10.png";
+import logo from "@/assets/Final-logo1.png";
+import textLogo from "@/assets/FINAL-TXT1.png";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -32,12 +32,12 @@ const Navbar = () => {
             <img
               src={logo}
               alt="W&S Logo"
-              className="h-12 w-12 object-contain"
+              className="h-16 w-16 object-contain"
             />
             <img
               src={textLogo}
               alt="Willburn & Stephenson"
-              className="h-8 object-contain"
+              className="h-50 object-contain"
             />
           </a>
 
