@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import logo from "@/assets/Final-logo1.png";
-import textLogo from "@/assets/Text& (2).png";
+import textLogo from "@/assets/TEXT-FINAL.png";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
