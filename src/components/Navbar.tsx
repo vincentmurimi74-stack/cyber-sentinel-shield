@@ -37,7 +37,7 @@ const Navbar = () => {
             <img
               src={textLogo}
               alt="Willburn & Stephenson"
-              className="h-25 object-contain"
+              className="hidden md:block h-25 object-contain"
             />
           </a>
 
