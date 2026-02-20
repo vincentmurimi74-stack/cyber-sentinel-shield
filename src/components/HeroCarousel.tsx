@@ -83,7 +83,7 @@ const HeroCarousel = () => {
         </p>
         <a
           href="#contact"
-          className="bg-accent text-accent-foreground rounded-lg px-8 py-3 font-semibold tracking-wider uppercase hover:bg-accent/90 transition-colors"
+          className="bg-[#f8da01] text-accent-foreground rounded-lg px-8 py-3 font-semibold tracking-wider uppercase hover:bg-[#f8da01]/90 transition-colors"
         >
           Contact Us
         </a>

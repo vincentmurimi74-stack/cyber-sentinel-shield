@@ -54,7 +54,7 @@ const Navbar = () => {
             ))}
             <a
               href="#contact"
-              className="bg-accent text-accent-foreground px-6 py-2.5 rounded font-semibold text-sm tracking-wider uppercase hover:bg-accent/90 transition-colors"
+              className="bg-[#f8da01] text-accent-foreground px-6 py-2.5 rounded font-semibold text-sm tracking-wider uppercase hover:bg-[#f8da01]/90 transition-colors"
             >
               Contact Us
             </a>
@@ -107,7 +107,7 @@ const Navbar = () => {
             <a
               href="#contact"
               onClick={() => setMobileOpen(false)}
-              className="block mx-4 text-center bg-accent text-accent-foreground px-6 py-2.5 rounded-lg font-semibold text-sm tracking-wider uppercase"
+              className="block mx-4 text-center bg-[#f8da01] text-accent-foreground px-6 py-2.5 rounded-lg font-semibold text-sm tracking-wider uppercase"
             >
               Contact Us
             </a>
