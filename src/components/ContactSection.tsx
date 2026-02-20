@@ -105,7 +105,7 @@ const ContactSection = () => {
           <div className="rounded-lg overflow-hidden shadow-lg min-h-[400px] border border-border/70 bg-card/30 backdrop-blur-sm relative z-10">
             <iframe
               title="Location Map"
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d255281.19036281tried!2d29.7545!3d-1.9403!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19dca4258ed8e797%3A0xa3c1b7f8e3e0a29e!2sKigali%2C%20Rwanda!5e0!3m2!1sen!2s!4v1700000000000"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.8215234823456!2d29.7545!3d-1.9403!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x19dca4258ed8e797%3A0xa3c1b7f8e3e0a29e!2sKigali%2C%20Rwanda!5e0!3m2!1sen!2s!4v1700000000000"
               width="100%"
               height="100%"
               style={{ border: 0, minHeight: "400px" }}
